@@ -10,7 +10,6 @@ def call(){
         def json = new JsonSlurper().parseText(connection.getInputStream().getText())
         List<language> languages = new ArrayList<>()
         languages = json.language.values
-        println( languages)
         return languages;
     } else {
         println("error connection to url")
