@@ -20,7 +20,3 @@ def call(){
         println("error connection to url")
     }
 }
-class language{
-    String id
-    String name
-}
