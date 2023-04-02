@@ -7,10 +7,15 @@ def call(){
     connection.setRequestProperty("Accept", "application/json")
     connection.connect()
     if (connection.responseCode == 200 || connection.responseCode == 201) {
-        def json = new JsonSlurper().parseText(connection.getInputStream().getText())
-        List<language> languages = new ArrayList<>()
-        languages = json.language.values
-        return languages;
+          def json = new JsonSlurper().parseText(connection.getInputStream().getText())
+        def languages = json.language.values
+        println(json)
+        List<String> langList = new ArrayList<>()
+
+        for (i in 0..<languages.size()) {
+            langList.add(languages[i].name)
+        }
+        return lanList
     } else {
         println("error connection to url")
     }
