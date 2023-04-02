@@ -15,7 +15,7 @@ def call(){
         for (i in 0..<languages.size()) {
             langList.add(languages[i].name)
         }
-        return lanList
+        return langList
     } else {
         println("error connection to url")
     }
