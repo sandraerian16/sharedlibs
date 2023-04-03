@@ -14,7 +14,7 @@ def call(){
 
         for (i in 0..<languages.size()) {
             if(i != 0) langList = langList + ","
-            langList = langList + languages[i].name
+            langList = langList + '"'+ languages[i].name + '"'
         }
         return "[" + langList + "]"
     } else {
