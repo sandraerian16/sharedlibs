@@ -16,7 +16,7 @@ def call(){
             if(i != 0) langList = langList + ","
             langList = langList + languages[i].name
         }
-        return langList
+        return "[" + langList "]"
     } else {
         println("error connection to url")
     }
