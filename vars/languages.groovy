@@ -13,8 +13,8 @@ def call(){
         String langList = ""
 
         for (i in 0..<languages.size()) {
-            if(i != 0) langlist = langlist + ","
-            langList = langlist + languages[i].name
+            if(i != 0) langList = langList + ","
+            langList = langList + languages[i].name
         }
         return langList
     } else {
