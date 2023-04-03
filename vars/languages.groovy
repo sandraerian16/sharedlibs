@@ -10,10 +10,11 @@ def call(){
           def json = new JsonSlurper().parseText(connection.getInputStream().getText())
         def languages = json.language.values
         println(json)
-        List<String> langList = new ArrayList<>()
+        String langList = ""
 
         for (i in 0..<languages.size()) {
-            langList.add(languages[i].name)
+            if(i != 0) langlist = langlist + ","
+            langList = langlist + languages[i]
         }
         return langList
     } else {
