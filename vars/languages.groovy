@@ -9,7 +9,7 @@ def call(){
     if (connection.responseCode == 200 || connection.responseCode == 201) {
           def json = new JsonSlurper().parseText(connection.getInputStream().getText())
         def languages = json.language.values
-        println(json)
+        println("call successful")
         String langList = ""
 
         for (i in 0..<languages.size()) {
