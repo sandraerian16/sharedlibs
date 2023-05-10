@@ -1,12 +1,11 @@
 import groovy.json.JsonSlurper
 
-def call(){
+def call(token){
 
  def owner = 'sandraerian16'
  def repo = 'apiTask'
  def baseRelease = 'v1.0.0'
  def headRelease = 'v3.0.0'
- def token = "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"
 
  def connection = new URL(
          "https://api.github.com/repos/${owner}/${repo}/compare/${baseRelease}...${headRelease}").openConnection()
