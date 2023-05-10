@@ -14,11 +14,16 @@ def call(){
  connection.setRequestProperty("Authorization", "Bearer ${token}")
  connection.setRequestProperty("X-GitHub-Api-Version", "2022-11-28")
  connection.connect()
-
+def responseCode = connection.getResponseCode()
+def responseMessage = connection.getResponseMessage()
+println "API response: ${responseCode} ${responseMessage}"
+ if(responseCode ==200){
  def json = new JsonSlurper().parseText(connection.getInputStream().getText())
 List<String> commitList = new ArrayList<>()
  json.commits.each { commit ->
   commitList.add(commit.commit.message)
  }
- println commitList;
+  println commitList;}
+ else{
+  println "Unsuccessful"
 }
