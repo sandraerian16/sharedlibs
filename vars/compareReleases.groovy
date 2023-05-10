@@ -27,3 +27,4 @@ List<String> commitList = new ArrayList<>()
  else{
   println "Unsuccessful"
 }
+}
