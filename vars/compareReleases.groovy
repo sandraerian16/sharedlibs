@@ -1,13 +1,8 @@
 import groovy.json.JsonSlurper
 
-def call(token){
+def call(owner,repo,token,baseRelease,headRelease){
 
- def owner = 'sandraerian16'
- def repo = 'apiTask'
- def baseRelease = 'v1.0.0'
- def headRelease = 'v3.0.0'
-
- def connection = new URL(
+  def connection = new URL(
          "https://api.github.com/repos/${owner}/${repo}/compare/${baseRelease}...${headRelease}").openConnection()
  connection.setRequestProperty("Accept", "application/vnd.github+json")
  connection.setRequestProperty("Authorization", "Bearer ${token}")
