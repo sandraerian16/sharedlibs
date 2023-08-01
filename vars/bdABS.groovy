@@ -68,8 +68,8 @@ List<String> getModulesFromPomFile(String pomFileName) {
     def testModules = profiles.collectMany { profile -> profile.depthFirst().findAll { it.name() == 'module' }.collect { it.text() } }
 
     List<String> allModules = []
-    modules.forEach(module ->  allModules.add(module.toString()))
-    testModules.forEach(module ->  allModules.add(module.toString()))
+    modules.forEach({ module -> allModules.add(module.toString()) })
+    testModules.forEach({ module -> allModules.add(module.toString()) })
 
     return allModules
 }
