@@ -1,4 +1,4 @@
-import groovy.xml.XmlParser
+import groovy.xml.XMLSlurper
 import java.nio.file.*
 
 def moduleChecker(String startDir) {
