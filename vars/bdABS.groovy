@@ -1,20 +1,20 @@
 import java.nio.file.*
 
 def moduleChecker(String startDir) {
-    static String resultPath
+//    static String resultPath
     static List<String> pomFileList = []
-    def scriptPath = Paths.get(System.getProperty('user.dir')).toAbsolutePath().toString()
-    resultPath = Paths.get(scriptPath, 'results').toString()
-    Files.createDirectories(Paths.get(resultPath))
+  //  def scriptPath = Paths.get(System.getProperty('user.dir')).toAbsolutePath().toString()
+  //  resultPath = Paths.get(scriptPath, 'results').toString()
+  //  Files.createDirectories(Paths.get(resultPath))
 
     println("Starting from dir: $startDir")
-    println("Generating results into: $resultPath")
+//    println("Generating results into: $resultPath")
 
     // Find all pom files with a "java" parent directory
     findAllPomFiles(Paths.get(startDir).toAbsolutePath().toString(), pomFileList, 'java')
 
-    File missingModulesFile = new File(Paths.get(resultPath, 'missing_modules.txt').toString())
-    missingModulesFile.createNewFile()
+  //  File missingModulesFile = new File(Paths.get(resultPath, 'missing_modules.txt').toString())
+  //  missingModulesFile.createNewFile()
 
     pomFileList.each { pomFile ->
             def dirs = getSubdirListForFile(pomFile)
@@ -27,7 +27,7 @@ def moduleChecker(String startDir) {
                 if (!(dir in moduleSet)) {
                 def message = "Pom file '$pomFile' is missing module '$dir'\n"
                 println(message)
-                missingModulesFile.append(message)
+            //    missingModulesFile.append(message)
                 }
             }
     }
