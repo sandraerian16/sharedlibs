@@ -95,7 +95,7 @@ def createJsonFromJson(def jsonResponse, String rootElement, priority = null) {
         map[rootElementValue] = orderMap
     }
     println JsonOutput.toJson(map)
-    writeJSON file: 'data.json', json: map
+    writeFile file: 'data.json', text: JsonOutput.toJson(map)
 }
 
 def Stack<String> selectSpecificValuesFromYAMLToStack( String key, boolean doubleInsert) {
