@@ -1,4 +1,4 @@
-println(params)
+println(params.arrive)
 pipeline {
     agent any
 
