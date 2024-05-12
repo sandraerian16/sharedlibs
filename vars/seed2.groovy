@@ -9,6 +9,7 @@ pipelineJob("dslJob2") {
                 ]
                 // Pass parameters along with the script execution
                 readFileFromWorkspace('vars/newjob.groovy').call(params)
+            }
         }
     }
 }
