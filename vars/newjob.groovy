@@ -1,3 +1,4 @@
+println(params)
 pipeline {
     agent any
 
